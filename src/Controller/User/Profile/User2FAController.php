@@ -188,7 +188,7 @@ class User2FAController extends AbstractController
         }
 
         if (!$form->isValid()) {
-            $this->logger->warning('2fa error occurred user "{username}" submitting the form "{errors}"', [
+            $this->logger->error('2fa error occurred user "{username}" submitting the form "{errors}"', [
                 'username' => $dto->username,
                 'errors' => $form->getErrors(),
             ]);
