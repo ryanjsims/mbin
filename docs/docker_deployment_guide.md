@@ -71,22 +71,23 @@ _OR_ use our pre-build images from [ghcr.io](https://ghcr.io). In this case you 
 nano compose.yml
 ```
 
-Find and replace or comment-out the following 4 lines:
+In **all four** sections for the www, php, messenger and messenger_ap services:
+
+comment out the the following lines:
 
 ```yml
 build:
   context: ../
   dockerfile: docker/Dockerfile
-image: mbin
 ```
 
-And instead use the following line on all places (`www`, `php`, `messenger` and `messenger_ap` services):
+and replace the `image: mbin` line with
 
 ```yml
 image: "ghcr.io/mbinorg/mbin:latest"
 ```
 
-**Important:** Do _NOT_ forget to change **ALL LINES** in that matches `image: mbin` to: `image: "ghcr.io/mbinorg/mbin:latest"` in the `compose.yml` file (should be 4 matches in total).
+**Important:** Double check that you have replaced **all four** `image: mbin` to: `image: "ghcr.io/mbinorg/mbin:latest"` in the `compose.yml` file
 
 3. Create config files and storage directories:
 
